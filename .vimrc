@@ -13,62 +13,10 @@ plug#begin('~/.vim/plugged')
     Plug 'Eliot00/auto-pairs'
     Plug 'greeschenko/vim9-lsp'
     Plug 'greeschenko/vim-fugitive'
-
-#:Git commit
-#:Git rebase -i
-#:Git diff
-#:Git log
-#:Git blame
-#:Git mergetool
-#:Git difftool
-
-#:Gedit
-#:Gsplit
-#loads the current file as it existed 3 commits ago.
-#:Gedit HEAD~3:%
-#:Gdiffsplit
-#:Gwrite
-#:Ggrep
-#:GMove
-#:GRename
-#:GDelete
-#:GRemove
-
     Plug 'greeschenko/vim9-line.vim'
     Plug 'liuchengxu/vim-which-key'
     Plug 'airblade/vim-gitgutter'
-
-
-
-## You can explicitly turn vim-gitgutter off and on (defaults to on):
-## 
-## turn off with :GitGutterDisable
-## turn on with :GitGutterEnable
-## toggle with :GitGutterToggle.
-## To toggle vim-gitgutter per buffer:
-## 
-## turn off with :GitGutterBufferDisable
-## turn on with :GitGutterBufferEnable
-## toggle with :GitGutterBufferToggle
-## You can turn the signs on and off (defaults to on):
-## 
-## turn on with :GitGutterSignsEnable
-## turn off with :GitGutterSignsDisable
-## toggle with :GitGutterSignsToggle.
-## And you can turn line highlighting on and off (defaults to off):
-## 
-## turn on with :GitGutterLineHighlightsEnable
-## turn off with :GitGutterLineHighlightsDisable
-## toggle with :GitGutterLineHighlightsToggle.
-## 
-## nmap ]h <Plug>(GitGutterNextHunk)
-## nmap [h <Plug>(GitGutterPrevHunk)
-
-
     Plug 'Yggdroot/indentLine'
-
-## :IndentLinesToggle
-
     Plug 'mityu/vim-alith'
     Plug 'SirVer/ultisnips'
     Plug 'honza/vim-snippets'
@@ -78,59 +26,9 @@ plug#begin('~/.vim/plugged')
     Plug 'tpope/vim-surround'
     Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
     Plug 'junegunn/fzf.vim'
-
-##  -----------------------+--------------------------------------------------------------------------------------
-##   `:Files [PATH]`         | Files (runs  `$FZF_DEFAULT_COMMAND`  if defined)
-##   `:GFiles [OPTS]`        | Git files ( `git ls-files` )
-##   `:GFiles?`              | Git files ( `git status` )
-##   `:Buffers`              | Open buffers
-##   `:Colors`               | Color schemes
-##   `:Ag [PATTERN]`         | {ag}{7} search result ( `ALT-A`  to select all,  `ALT-D`  to deselect all)
-##   `:Rg [PATTERN]`         | {rg}{8} search result ( `ALT-A`  to select all,  `ALT-D`  to deselect all)
-##   `:Lines [QUERY]`        | Lines in loaded buffers
-##   `:BLines [QUERY]`       | Lines in the current buffer
-##   `:Tags [QUERY]`         | Tags in the project ( `ctags -R` )
-##   `:BTags [QUERY]`        | Tags in the current buffer
-##   `:Marks`                | Marks
-##   `:Windows`              | Windows
-##   `:Locate PATTERN`       |  `locate`  command output
-##   `:History`              |  `v:oldfiles`  and open buffers
-##   `:History:`             | Command history
-##   `:History/`             | Search history
-##   `:Snippets`             | Snippets ({UltiSnips}{9})
-##   `:Commits [LOG_OPTS]`   | Git commits (requires {fugitive.vim}{10})
-##   `:BCommits [LOG_OPTS]`  | Git commits for the current buffer; visual-select lines to track changes in the range
-##   `:Commands`             | Commands
-##   `:Maps`                 | Normal mode mappings
-##   `:Helptags`             | Help tags [1]
-##   `:Filetypes`            | File types
-
-
-
     Plug 'ntpeters/vim-better-whitespace'
     Plug 'maxmellon/vim-jsx-pretty'
-    ##Plug 'justinmk/vim-sneak'
     Plug 'monkoose/vim9-stargate'
-
-## # For 1 character to search before showing hints
-## noremap <leader>f <Cmd>call stargate#OKvim(1)<CR>
-## # For 2 consecutive characters to search
-## noremap <leader>F <Cmd>call stargate#OKvim(2)<CR>
-##
-## nnoremap <leader>w <Cmd>call stargate#Galaxy()<CR>
-## # for the start of a word
-## noremap <leader>W <Cmd>call stargate#OKvim('\<')<CR>
-## # for the end of a word
-## noremap <leader>e <Cmd>call stargate#OKvim('\S\>')<CR>
-## # for the start of a line
-## noremap <leader>l <Cmd>call stargate#OKvim('\_^')<CR>
-## # for the last character on the line
-## noremap <leader>E <Cmd>call stargate#OKvim('\S\s*$')<CR>
-## # for the end of a line
-## noremap <leader>$ <Cmd>call stargate#OKvim('$')<CR>
-## # for any bracket, parentheses or curly bracket
-## noremap <leader>[ <Cmd>call stargate#OKvim('[(){}[\]]')<CR>
-
     Plug 'greeschenko/daytask'
     Plug 'greeschenko/cyberpunk99.vim'
     Plug 'sago35/tinygo.vim'
@@ -308,9 +206,27 @@ nmap < :bp<CR>
 #nmap <leader>c :bd<CR>
 nmap <leader>/ :BLines<CR>
 nmap <leader>b :Buffers<CR>
-#nmap <leader>f :Files<cr>
 
+nmap <leader>ff :Files<cr>
+nmap <leader>fl :Lines<cr>
+nmap <leader>fr :Rg<cr>
+nmap <leader>fm :Marks<cr>
+nmap <leader>fh :History<cr>
+nmap <leader>f: :History:<cr>
+nmap <leader>f/ :History/<cr>
+nmap <leader>fs :Snippets<cr>
+nmap <leader>fC :Commits<cr>
+nmap <leader>fc :BCommits<cr>
 
+noremap <leader>mf <Cmd>call stargate#OKvim(1)<CR>
+noremap <leader>mF <Cmd>call stargate#OKvim(2)<CR>
+noremap <leader>mw <Cmd>call stargate#Galaxy()<CR>
+noremap <leader>mW <Cmd>call stargate#OKvim('\<')<CR>
+noremap <leader>me <Cmd>call stargate#OKvim('\S\>')<CR>
+noremap <leader>ml <Cmd>call stargate#OKvim('\_^')<CR>
+noremap <leader>mE <Cmd>call stargate#OKvim('\S\s*$')<CR>
+noremap <leader>m$ <Cmd>call stargate#OKvim('$')<CR>
+noremap <leader>m[ <Cmd>call stargate#OKvim('[(){}[\]]')<CR>
 
 nmap <leader>no :NERDTree<cr>
 nmap <leader>nf :NERDTreeFind<cr>
@@ -327,6 +243,16 @@ nmap <leader>len         :LspDiagNext<CR>
 nmap <leader>lep         :LspDiagPrev<CR>
 nmap <leader>lel         :LspDiagShow<CR>
 nmap <leader>l=          :LspFormat<CR>
+
+nmap <leader>gc :Git commit<CR>
+nmap <leader>gD :Git diff<CR>
+nmap <leader>gl :Git log<CR>
+nmap <leader>gb :Git blame<CR>
+nmap <leader>gm :Git mergetool<CR>
+nmap <leader>gt :Git difftool<CR>
+nmap <leader>gs :Gsplit<CR>
+nmap <leader>gd :Gdiffsplit<CR>
+nmap <leader>gh :GitGutterLineHighlightsToggle<CR>
 
 ###AUTOCMD
 
