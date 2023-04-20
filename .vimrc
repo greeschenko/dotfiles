@@ -244,7 +244,7 @@ nmap <leader>lep         :LspDiagPrev<CR>
 nmap <leader>lel         :LspDiagShow<CR>
 nmap <leader>l=          :LspFormat<CR>
 
-nmap <leader>gc :Git commit<CR>
+nmap <leader>gc :Git commit -a<CR>
 nmap <leader>gD :Git diff<CR>
 nmap <leader>gl :Git log<CR>
 nmap <leader>gb :Git blame<CR>
