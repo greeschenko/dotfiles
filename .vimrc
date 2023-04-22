@@ -148,6 +148,7 @@ lsp#options#OptionsSet({
     diagSignHintText: '◆ ',
     ultisnipsSupport: v:true,
     completionTextEdit: v:false,
+    useBufferCompletion: v:true,
 })
 
 var lspServers = [
