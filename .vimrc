@@ -158,7 +158,7 @@ var lspServers = [
         'args': ['--stdio']
     },
     {
-        'filetype': ['javascript', 'typescript'],
+        'filetype': ['javascript', 'typescript', 'typescriptreact'],
         'path': 'typescript-language-server',
         'args': ['--stdio']
     },
@@ -176,6 +176,15 @@ lsp#lsp#AddServer(lspServers)
 highlight Git guibg=#F34F29 guifg=#FFFFFF ctermbg=202 ctermfg=231
 highlight link LspDiagLine NONE
 highlight link LspDiagVirtualText WarningMsg
+highlight link LspDiagVirtualTextError WarningMsg
+highlight link LspDiagVirtualTextWarning MoreMsg
+highlight link LspDiagVirtualTextInfo Comment
+highlight link LspDiagVirtualTextHint MoreMsg
+
+highlight link LspDiagSignErrorText WarningMsg
+highlight link LspDiagSignWarningText MoreMsg
+highlight link LspDiagSignInfoText Comment
+highlight link LspDiagSignHintText MoreMsg
 
 ###KEYMAPS
 
