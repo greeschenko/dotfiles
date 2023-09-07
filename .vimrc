@@ -16,16 +16,8 @@ vim9script noclear
 # - tree-seater suport
 # - analog lazy.nvim
 # - treck time and clicks in the each file
-# - try all
-#   https://github.com/junegunn/vim-peekaboo
-#   https://github.com/kshenoy/vim-signature
-#   https://github.com/psliwka/vim-smoothie Smooth scrolling for Vim done right
-#   https://github.com/wfxr/minimap.vim Blazing fast minimap
-#   https://github.com/github/copilot.vim Neovim plugin for GitHub Copilot
-#   https://github.com/Bekaboo/dropbar.nvim IDE-like breadcrumbs, out of the
-#   box
-#   https://github.com/piersolenski/wtf.nvim Delicious diagnostic debugging in Neovim
-#   https://github.com/ray-x/go.nvim A feature-rich Go development plugin
+# - work with mark registers add custom keys
+# - make an analisys https://github.com/ray-x/go.nvim A feature-rich Go development plugin
 
 ###PLUGINS
 
@@ -61,11 +53,8 @@ plug#begin('~/.vim/plugged')
     Plug 'sago35/tinygo.vim'
     Plug 'dyng/ctrlsf.vim'
     #experimental
-    Plug 'Eliot00/git-lens.vim'
     Plug 'junegunn/vim-peekaboo'
     Plug 'kshenoy/vim-signature'
-    Plug 'psliwka/vim-smoothie'
-    Plug 'wfxr/minimap.vim'
 plug#end()
 
 #### SETTINGS
