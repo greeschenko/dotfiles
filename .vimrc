@@ -219,11 +219,36 @@ g:mapleader = "\<Space>"
 g:maplocalleader = ','
 nnoremap <silent> <leader>      :<c-u>WhichKey '<Space>'<CR>
 vnoremap <silent> <leader>      :<c-u>WhichKeyVisual '<Space>'<CR>
+
+which_key#register('<Space>', "g:which_key_map", "n")
+which_key#register('<Space>', "g:which_key_map_visual", "v")
+
+g:which_key_map =  {}
+g:which_key_map.f = { 'name': '+FZF' }
+g:which_key_map.c = { 'name': '+COMMENT' }
+g:which_key_map.g = { 'name': '+GIT' }
+g:which_key_map.l = { 'name': '+LSP'}
+g:which_key_map.l.e = { 'name': '+Diag'}
+g:which_key_map.s = { 'name': '+STARGATE' }
+g:which_key_map.s.f = 'for 1 character search'
+g:which_key_map.s.F = 'for 2 character search'
+g:which_key_map.s.w = 'for the start of a word'
+g:which_key_map.s.e = 'for the end of a word'
+g:which_key_map.s.l = 'for the start of a line'
+g:which_key_map.s.E = 'for the last character on the line'
+g:which_key_map.s['$'] = 'for the end of a line'
+g:which_key_map.s['['] = 'for the any bracket'
+g:which_key_map.n = { 'name': '+TREE' }
+g:which_key_map.v = { 'name': '+SELECT' }
+g:which_key_map.v.l = 'line text'
+
+g:which_key_map_visual = {}
+
 nmap <leader>e :UltiSnipsEdit<cr>
 #set langmap=ФИСВУАПРШОЛДЬТЩЗЙКЫЕГМЦЧНЯЖ;ABCDEFGHIJKLMNOPQRSTUVWXYZ:,фисвуапршолдьтщзйкыегмцчня;abcdefghijklmnopqrstuvwxyz
 
 nmap <leader>q ZZ
-nmap <leader>s :w<cr>
+nmap <C-s> :w<cr>
 
 
 nmap <C-h> <C-w>h
@@ -255,15 +280,14 @@ nmap <leader>fs :Snippets<cr>
 nmap <leader>fC :Commits<cr>
 nmap <leader>fc :BCommits<cr>
 
-noremap <leader>mf <Cmd>call stargate#OKvim(1)<CR>
-noremap <leader>mF <Cmd>call stargate#OKvim(2)<CR>
-noremap <leader>mw <Cmd>call stargate#Galaxy()<CR>
-noremap <leader>mW <Cmd>call stargate#OKvim('\<')<CR>
-noremap <leader>me <Cmd>call stargate#OKvim('\S\>')<CR>
-noremap <leader>ml <Cmd>call stargate#OKvim('\_^')<CR>
-noremap <leader>mE <Cmd>call stargate#OKvim('\S\s*$')<CR>
-noremap <leader>m$ <Cmd>call stargate#OKvim('$')<CR>
-noremap <leader>m[ <Cmd>call stargate#OKvim('[(){}[\]]')<CR>
+noremap <leader>sf <Cmd>call stargate#OKvim(1)<CR>
+noremap <leader>sF <Cmd>call stargate#OKvim(2)<CR>
+noremap <leader>sw <Cmd>call stargate#OKvim('\<')<CR>
+noremap <leader>se <Cmd>call stargate#OKvim('\S\>')<CR>
+noremap <leader>sl <Cmd>call stargate#OKvim('\_^')<CR>
+noremap <leader>sE <Cmd>call stargate#OKvim('\S\s*$')<CR>
+noremap <leader>s$ <Cmd>call stargate#OKvim('$')<CR>
+noremap <leader>s[ <Cmd>call stargate#OKvim('[(){}[\]]')<CR>
 
 nmap <leader>no :NERDTree<cr>
 nmap <leader>nf :NERDTreeFind<cr>
@@ -279,7 +303,7 @@ nmap <leader>K           :LspHover<CR>
 nmap <leader>len         :LspDiagNext<CR>
 nmap <leader>lep         :LspDiagPrev<CR>
 nmap <leader>lel         :LspDiagShow<CR>
-nmap <leader>l=          :LspFormat<CR>
+nmap <leader>lf          :LspFormat<CR>
 
 nmap <leader>gc :Git commit -a<CR>
 nmap <leader>ga :Git add .<CR>
