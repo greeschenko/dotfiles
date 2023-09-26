@@ -201,7 +201,7 @@ lsp#lsp#AddServer(lspServers)
 ###HIGHLITE
 
 highlight Git guibg=#F34F29 guifg=#FFFFFF ctermbg=202 ctermfg=231
-highlight link LspDiagLine NONE
+##highlight link LspDiagLine NONE
 highlight link LspDiagVirtualText WarningMsg
 highlight link LspDiagVirtualTextError WarningMsg
 highlight link LspDiagVirtualTextWarning MoreMsg
@@ -212,6 +212,11 @@ highlight link LspDiagSignErrorText WarningMsg
 highlight link LspDiagSignWarningText MoreMsg
 highlight link LspDiagSignInfoText Comment
 highlight link LspDiagSignHintText MoreMsg
+
+highlight link LspDiagInlineError WarningMsg
+highlight link LspDiagInlineWarning MoreMsg
+highlight link LspDiagInlineInfo Comment
+highlight link LspDiagInlineHint NONE
 
 ###KEYMAPS
 
